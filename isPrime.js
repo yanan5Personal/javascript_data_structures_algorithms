@@ -2,10 +2,15 @@ const expect = require("./expect");
 
 function isPrime(n) {
   if (n <= 1) return false;
-  for (let i = 2; i < n; i++) {
-    if (n % i === 0) return false;
+  if (n <= 3) return false;
+  if (n % 2 === 0 || n % 3 === 0) {
+    return false;
   }
-  return true;
+  for (let i = 5; i * i <= n; i++) {
+    if (n % i === 0 || n % (i + 2) === 0) {
+      return false;
+    }
+  }
 }
 
 expect("isPrime(2),", isPrime(2), true);
