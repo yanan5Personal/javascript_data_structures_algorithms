@@ -1,4 +1,4 @@
-const expect = require("./expect");
+const expect = require("../utils/expect");
 
 function isPrime(n) {
   if (n <= 1) return false;
