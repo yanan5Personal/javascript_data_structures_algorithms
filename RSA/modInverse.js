@@ -27,3 +27,4 @@ function modInverse(e, phi) {
   return x1;
 }
 modInverse(7, 40);
+module.exports = modInverse;
