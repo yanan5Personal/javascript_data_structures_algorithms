@@ -1,3 +1,4 @@
+// TODO: implement http://www-math.ucdenver.edu/~wcherowi/courses/m5410/exeucalg.html
 function modInverse(e, phi) {
   let m0 = phi,
     t,
