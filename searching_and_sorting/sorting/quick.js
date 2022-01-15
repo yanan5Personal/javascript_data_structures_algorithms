@@ -16,7 +16,6 @@ function quickSortHelper(items, left, right) {
 }
 
 function partition(items, left, right) {
-  debugger;
   let pivot = items[Math.floor((left + right) / 2)];
   while (left <= right) {
     while (pivot > items[left]) {
