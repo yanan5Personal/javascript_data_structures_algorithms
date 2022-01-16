@@ -11,5 +11,26 @@ function sqrtIntNaive(number) {
   }
   return index;
 }
-
-module.exports = sqrtIntNaive;
+function sqrtIntBinary(number) {
+  if (number === 0 || number === 1) return number;
+  let start = 1,
+    end = number,
+    ans;
+  while (start <= end) {
+    let mid = parseInt((start + end) / 2);
+    if (mid * mid === number) {
+      return mid;
+    }
+    if (mid * mid > number) {
+      end = mid - 1;
+    } else {
+      start = mid + 1;
+      ans = mid;
+    }
+  }
+  return mid;
+}
+module.exports = {
+  sqrtIntNaive,
+  sqrtIntBinary,
+};
