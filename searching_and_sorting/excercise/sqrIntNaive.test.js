@@ -1,6 +1,7 @@
 const { sqrtIntNaive, sqrtIntBinary } = require("./sqrIntNaive");
 
 test("return the squaroot of the given number", () => {
+  console.log("sqrIntNaive", sqrtIntNaive);
   expect(sqrtIntNaive(16)).toEqual(4);
 });
 

@@ -11,7 +11,7 @@
     "jest": "^27.4.7"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --verbose",
     "prettier": "prettier --write ./",
     "prepare": "husky install"
   }
