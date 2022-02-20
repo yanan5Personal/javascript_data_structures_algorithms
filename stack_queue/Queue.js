@@ -38,6 +38,7 @@ function queueSearch(queue, ele) {
   }
   return false;
 }
+module.exports = Queue;
 var queue1 = new Queue();
 queue1.enqueue(1);
 queue1.enqueue(2);
