@@ -1,42 +1,43 @@
 function Stack(array) {
-	this.array = [];
-	if (array) {
-		this.array = array;
-	}
+  this.array = [];
+  if (array) {
+    this.array = array;
+  }
 }
 Stack.prototype.getBuffer = function getBuffer() {
-	return this.array.slice();
+  return this.array.slice();
 };
 Stack.prototype.isEmpty = function isEmpty() {
-	return this.array.length === 0;
+  return this.array.length === 0;
 };
 Stack.prototype.peek = function peek() {
-	return this.array[this.array.length - 1];
+  return this.array[this.array.length - 1];
 };
 Stack.prototype.push = function push(ele) {
-	this.array.push(ele);
+  this.array.push(ele);
 };
 Stack.prototype.pop = function pop() {
-	return this.array.pop();
+  return this.array.pop();
 };
 function stackAccessNthTopNode(stack, n) {
-	var bufferArray = stack.getBuffer();
-	if (n <= 0) throw "error";
-	// var bufferStack = new Stack(bufferArray);
-	// while (--n !== 0) {
-	// 	bufferStack.pop();
-	// }
-	// return bufferStack.pop();
-	return bufferArray[bufferArray.length - n];
+  var bufferArray = stack.getBuffer();
+  if (n <= 0) throw "error";
+  // var bufferStack = new Stack(bufferArray);
+  // while (--n !== 0) {
+  // 	bufferStack.pop();
+  // }
+  // return bufferStack.pop();
+  return bufferArray[bufferArray.length - n];
 }
 function stackSearch(stack, ele) {
-	let bufferArray = stack.getBuffer();
-	const bufferStack = new Stack(bufferArray);
-	while (!bufferStack.isEmpty()) {
-		if (bufferStack.pop() === ele) return true;
-	}
-	return false;
+  let bufferArray = stack.getBuffer();
+  const bufferStack = new Stack(bufferArray);
+  while (!bufferStack.isEmpty()) {
+    if (bufferStack.pop() === ele) return true;
+  }
+  return false;
 }
+module.exports = Stack;
 
 let stack1 = new Stack();
 stack1.push(10);

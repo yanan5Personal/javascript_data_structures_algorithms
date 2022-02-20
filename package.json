@@ -7,9 +7,12 @@
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^27.4.0",
+    "husky": "^7.0.4",
     "jest": "^27.4.7"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "prettier": "prettier --write ./",
+    "prepare": "husky install"
   }
 }

@@ -1,39 +1,39 @@
 function HashTable(size) {
-	this.size = size;
-	this.keys = Array(size).fill(null);
-	this.values = Array(size).fill(null);
-	this.limit = 0;
+  this.size = size;
+  this.keys = Array(size).fill(null);
+  this.values = Array(size).fill(null);
+  this.limit = 0;
 }
 
 HashTable.prototype.hash = function (key) {
-	if (!Number.isInteger(key)) throw "must be int";
-	return key % this.size;
+  if (!Number.isInteger(key)) throw "must be int";
+  return key % this.size;
 };
 
 HashTable.prototype.put = function (key, value) {
-	if (this.limit >= this.size) return "Hash table full";
-	let hashIndex = this.hash(key);
-	let squareIndex = 1;
-	while (this.keys[hashIndex] !== null) {
-		hashIndex = Math.pow(squareIndex, 2);
-		hashIndex = hashIndex % this.size;
-		squareIndex++;
-	}
+  if (this.limit >= this.size) return "Hash table full";
+  let hashIndex = this.hash(key);
+  let squareIndex = 1;
+  while (this.keys[hashIndex] !== null) {
+    hashIndex = Math.pow(squareIndex, 2);
+    hashIndex = hashIndex % this.size;
+    squareIndex++;
+  }
 
-	this.keys[hashIndex] = key;
-	this.values[hashIndex] = value;
-	this.limit++;
+  this.keys[hashIndex] = key;
+  this.values[hashIndex] = value;
+  this.limit++;
 };
 
 HashTable.prototype.get = function (key) {
-	let hashIndex = this.hash(key);
-	let squareIndex = 1;
-	while (this.keys[hashIndex] !== key) {
-		hashIndex = Math.pow(squareIndex, 2);
-		hashIndex = hashIndex % this.size;
-		squareIndex++;
-	}
-	return this.values[hashIndex];
+  let hashIndex = this.hash(key);
+  let squareIndex = 1;
+  while (this.keys[hashIndex] !== key) {
+    hashIndex = Math.pow(squareIndex, 2);
+    hashIndex = hashIndex % this.size;
+    squareIndex++;
+  }
+  return this.values[hashIndex];
 };
 
 var exampletable = new HashTable(13);
